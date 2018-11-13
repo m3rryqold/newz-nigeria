@@ -2,53 +2,62 @@
   <section class="section">
     <div class="container">
       <h2 class="title has-text-centered">Top Headlines</h2>
-      <div class="columns is-multiline">
-        <div
-          class="column is-one-quarter"
-          v-for="(article, index) in articles"
-          :key="index">
-            <a :href="article.url" target="_blank">
-              <div class="card">
-                <div class="card-image">
-                  <figure class="image is-3by2">
-                    <img :src="article.urlToImage" :alt="article.title">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="content"> 
-                    {{ article.title }}
-                    <!-- <br> 
-                    <span>{{ article.publishedAt | timeSince }}</span>
-                    <br>
-                    <span>{{ article.publishedAt | day }}</span> -->
-                    <br>
-                    <div class="tags has-addons">
-                      <!-- <span class="tag">Source</span> -->
-                      <span class="tag is-dark">{{ article.source.name }}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </a>
-        </div>
-      </div>
+      <b-tabs position="is-centered" class="block">
+        <b-tab-item label="General">
+          <general></general>
+        </b-tab-item>
+
+        <b-tab-item label="Business">
+          <business></business>
+        </b-tab-item>
+
+        <b-tab-item label="Entertainment">
+          <entertainment></entertainment>
+        </b-tab-item>
+
+        <b-tab-item label="Health">
+          <health></health>
+        </b-tab-item>
+
+        <b-tab-item label="Science">
+          <science></science>
+        </b-tab-item>
+
+        <b-tab-item label="Sports">
+          <sports></sports>
+        </b-tab-item>
+
+        <b-tab-item label="Tech">
+          <technology></technology>
+        </b-tab-item>
+      </b-tabs>
+      
     </div>
   </section>
 </template>
 
 <script>
+  import general from '~/components/General.vue'
+  import business from '~/components/Business.vue'
+  import entertainment from '~/components/Entertainment.vue'
+  import health from '~/components/Health.vue'
+  import science from '~/components/Science.vue'
+  import sports from '~/components/Sports.vue'
+  import technology from '~/components/Technology.vue'
 
-export default {
-  async asyncData({ app }) {
-    const { articles } = await app.$axios.$get(
-      `https://newsapi.org/v2/top-headlines?country=ng&apiKey=${ 
-        process.env.API_KEY 
-      }`
-    )
 
-    return { articles }
+  export default {
+    
+    components: {
+      general,
+      business,
+      entertainment,
+      health,
+      science,
+      sports,
+      technology
+    },
   }
-}
 </script>
 
 <style>

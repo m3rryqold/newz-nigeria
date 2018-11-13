@@ -18,8 +18,10 @@
         "@nuxtjs/bulma": "^1.2.0",
         "@nuxtjs/dotenv": "^1.1.1",
         "@nuxtjs/pwa": "^2.4.0",
+        "buefy": "^0.6.7",
         "date-fns": "^1.29.0",
         "nuxt": "^1.0.0",
+        "nuxt-buefy": "^0.2.3",
         "url": "^0.11.0"
     },
     "devDependencies": {

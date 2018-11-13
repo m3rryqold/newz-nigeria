@@ -8,8 +8,10 @@ module.exports = {
     modules: [
         '@nuxtjs/axios',
         '@nuxtjs/dotenv',
-        '@nuxtjs/bulma',
-        '@nuxtjs/pwa'
+        //'@nuxtjs/bulma',
+        '@nuxtjs/pwa',
+        'nuxt-buefy'
+        //'buefy'
     ],
     head: {
         title: 'newz-nigeria',
