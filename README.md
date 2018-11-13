@@ -1,6 +1,6 @@
 # newz-nigeria
 
-> A Nuxtjs pwa nigerian news application
+> A Nuxtjs nigerian news progressive web application
 
 ## Build Setup
 
